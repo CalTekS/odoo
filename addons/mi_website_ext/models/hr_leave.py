@@ -7,6 +7,21 @@ _logger = logging.getLogger(__name__)
 class HrLeave(models.Model):
     _inherit = 'hr.leave'
 
+    show_cancel_button = fields.Boolean(compute='_compute_show_cancel_button')
+
+    @api.depends('state', 'employee_id')
+    def _compute_show_cancel_button(self):
+        for holiday in self:
+            user = self.env.user
+            if user.id == 2:
+                holiday.show_cancel_button = holiday.state in ['draft', 'confirm', 'validate1']
+
+            elif holiday.employee_id.user_id == user:
+                holiday.show_cancel_button = holiday.state in ['draft', 'confirm']
+            
+            else:
+                holiday.show_cancel_button = False
+
     @api.model_create_multi
     def create(self, vals_list):
         for vals in vals_list:
