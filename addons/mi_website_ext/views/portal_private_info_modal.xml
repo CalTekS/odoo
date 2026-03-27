@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="portal_private_info_modal" inherit_id="portal.frontend_layout">
+        <xpath expr="//div[@id='wrapwrap']" position="inside">
+            <div class="modal fade" id="privateInfoModal" tabindex="-1" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">¡Atención! Perfil Incompleto</h5>
+                        </div>
+                        <div class="modal-body">
+                            <p style="margin-bottom: 0;">Para continuar utilizando la intranet, es obligatorio que completes tu información privada.</p>
+                            <ul id="missingFieldsList" class="text-danger fw-bold mt-3 mb-3">
+                            </ul>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="" id="profileUpdateButton" class="accept-button">Completar mi Perfil</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+    </template>
+</odoo>

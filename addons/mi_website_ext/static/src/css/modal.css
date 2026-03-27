@@ -45,6 +45,12 @@
 .btn-enfermedad-custom:hover,
 .accept-button:hover {
   background: #ffdaaf;
+  text-decoration: none;
+}
+
+.accept-button:focus-visible {
+  background: #ffdaaf;
+  border: none;
 }
 
 .advice_p {

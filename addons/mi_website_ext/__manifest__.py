@@ -21,6 +21,7 @@
         ],
         "web.assets_frontend": [
             "mi_website_ext/static/src/js/notify_button_handler.js",
+            "mi_website_ext/static/src/js/check_private_info.js",
             'mi_website_ext/static/src/js/auto_logout.js',
             'mi_website_ext/static/src/js/manual_viewer.js',
             'mi_website_ext/static/src/js/back_button_refresh.js',
@@ -89,7 +90,8 @@
         'views/manual_viewer_modal.xml',
         'views/mandatory_policies_modal.xml',
         'views/hr_leave_views.xml',
-        'views/userInfo.xml'
+        'views/userInfo.xml',
+        'views/portal_private_info_modal.xml'
     ],
     "installable": True,
     "application": True,
