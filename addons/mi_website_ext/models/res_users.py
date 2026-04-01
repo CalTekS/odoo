@@ -45,7 +45,8 @@ class Users(models.Model):
 
     x_days_in_company = fields.Integer(
         string="Días en la Compañía",
-        compute='_compute_days_in_company'
+        compute='_compute_days_in_company',
+        store=False
     )
 
     @api.depends_context('uid')
@@ -252,7 +253,7 @@ class Users(models.Model):
     @api.depends_context('uid')
     def _compute_days_in_company(self):
         today = date.today()
-        employees = self.env['hr.employee'].search([('user_id', 'in', self.ids)])
+        employees = self.env['hr.employee'].sudo().search([('user_id', 'in', self.ids)])
         employee_map = {employee.user_id.id: employee for employee in employees}
 
         for user in self:
@@ -262,10 +263,11 @@ class Users(models.Model):
             if not employee:
                 continue
 
-            first_contract = self.env['hr.contract'].search([
+            first_contract = self.env['hr.contract'].sudo().search([
                 ('employee_id', '=', employee.id),
                 ('date_start', '!=', False),
-                ('date_start', '<=', today)
+                ('date_start', '<=', today),
+                ('state', 'in', ['open', 'close'])
             ], order='date_start asc', limit=1)
 
             if first_contract:
