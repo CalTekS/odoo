@@ -6,15 +6,18 @@ class HrEmployeeInherit(models.Model):
 
     has_incomplete_private_info = fields.Boolean(compute='_compute_incomplete_info')
 
-    @api.depends('private_email', 'private_phone', 'image_1920', 'identification_id', 'gender', 'birthday', 'place_of_birth', 'country_of_birth', 'marital', 'certificate', 'study_field', 'study_school', 'children', 'emergency_contact', 'emergency_phone') 
+    x_bank_account_num = fields.Char(string="Número de Cuenta Bancaria")
+    x_bank_name = fields.Char(string="Nombre del Banco")
+
+    @api.depends('private_email', 'private_phone', 'image_1920', 'identification_id', 'x_bank_account_num', 'x_bank_name', 'gender', 'birthday', 'place_of_birth', 'country_of_birth', 'marital', 'certificate', 'study_field', 'study_school', 'children', 'emergency_contact', 'emergency_phone') 
     def _compute_incomplete_info(self):
         for employee in self:
             required_fields = [
                 employee.private_email,
                 employee.private_phone,
                 employee.image_1920,
-                # employee.private_lang, tengo que agregarlo a el depends
-                #employee.bank_account_id,
+                employee.x_bank_account_num,
+                employee.x_bank_name,
                 employee.identification_id,
                 employee.country_id,
                 employee.gender,
@@ -42,10 +45,12 @@ class HrEmployeeInherit(models.Model):
             'image_1920': 'Foto de Perfil',
             'private_email': 'Correo Electrónico Privado',
             'private_phone': 'Teléfono Privado',
-            # 'bank_account_id': 'Cuenta Bancaria', 
+            'x_bank_account_num': 'Cuenta Bancaria', 
             'country_id': 'País de Nacimiento/Origen',
             'identification_id': 'Número de Identificación (Cédula/DNI)',
             'gender': 'Género',
+            'x_bank_account_num': 'Número de Cuenta Bancaria',
+            'x_bank_name': 'Nombre del Banco',
             'birthday': 'Fecha de Nacimiento',
             'place_of_birth': 'Lugar de Nacimiento',
             'marital': 'Estado Civil',
@@ -73,3 +78,11 @@ class HrEmployeeInherit(models.Model):
     def action_save_private_info(self):
         self.ensure_one()
         return {'type': 'ir.actions.act_window_close'}
+    
+    @api.depends('user_id', 'user_id.partner_id')
+    def _compute_my_bank_partner(self):
+        for record in self:
+            if record.user_id and record.user_id.partner_id:
+                record.my_bank_partner_id = record.user_id.partner_id.id
+            else:
+                record.my_bank_partner_id = False

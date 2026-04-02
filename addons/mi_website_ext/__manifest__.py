@@ -54,6 +54,7 @@
     },
     "data": [
         "security/ir.model.access.csv",
+        "security/res_bank_security.xml",
         'data/mail_templates.xml',
         'wizards/publication_view_wizard_views.xml',
         'views/pdf_viewer_modal.xml',

@@ -376,6 +376,9 @@
                                                                 <img src="/mi_website_ext/static/src/img/imagetester.jpg" class="miniuser" />
                                                             </t>
                                                             <div class="personinfo">
+                                                                <p t-if="winner_pub.winner_score == monthly_winners[0].winner_score" style="color: red; font-weight: bold; font-size: 1.1em;">
+                                                                    Ganador de la estadía en el hotel
+                                                                </p>
                                                                 <h4>
                                                                     <t t-esc="winner_pub.employee_id.name if winner_pub.employee_id else winner_pub.name"/>
                                                                 </h4>

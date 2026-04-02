@@ -49,6 +49,26 @@ class Users(models.Model):
         store=False
     )
 
+    x_bank_account_num = fields.Char(
+        related='employee_id.x_bank_account_num', 
+        readonly=False, 
+        string="Número de Cuenta Bancaria"
+    )
+
+    x_bank_name = fields.Char(
+        related='employee_id.x_bank_name', 
+        readonly=False, 
+        string="Nombre del Banco"
+    )
+
+    @property
+    def SELF_READABLE_FIELDS(self):
+        return super().SELF_READABLE_FIELDS + ['x_bank_account_num', 'x_bank_name']
+
+    @property
+    def SELF_WRITEABLE_FIELDS(self):
+        return super().SELF_WRITEABLE_FIELDS + ['x_bank_account_num', 'x_bank_name']
+
     @api.depends_context('uid')
     def _compute_days_until_next_vacation(self):
         today = fields.Date.context_today(self)
