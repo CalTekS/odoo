@@ -14,7 +14,7 @@ class HrEmployeeInherit(models.Model):
                 employee.private_phone,
                 employee.image_1920,
                 # employee.private_lang, tengo que agregarlo a el depends
-                employee.bank_account_id,
+                #employee.bank_account_id,
                 employee.identification_id,
                 employee.country_id,
                 employee.gender,
@@ -42,7 +42,7 @@ class HrEmployeeInherit(models.Model):
             'image_1920': 'Foto de Perfil',
             'private_email': 'Correo Electrónico Privado',
             'private_phone': 'Teléfono Privado',
-            'bank_account_id': 'Cuenta Bancaria', 
+            # 'bank_account_id': 'Cuenta Bancaria', 
             'country_id': 'País de Nacimiento/Origen',
             'identification_id': 'Número de Identificación (Cédula/DNI)',
             'gender': 'Género',
