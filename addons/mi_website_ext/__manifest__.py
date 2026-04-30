@@ -92,7 +92,8 @@
         'views/mandatory_policies_modal.xml',
         'views/hr_leave_views.xml',
         'views/userInfo.xml',
-        'views/portal_private_info_modal.xml'
+        'views/portal_private_info_modal.xml',
+        'views/res_users_view.xml',
     ],
     "installable": True,
     "application": True,
