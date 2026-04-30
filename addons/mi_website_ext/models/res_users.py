@@ -63,7 +63,7 @@ class Users(models.Model):
 
     @property
     def SELF_READABLE_FIELDS(self):
-         return super().SELF_READABLE_FIELDS + ['x_bank_account_num', 'x_bank_name', 'employee_parent_id', 'coach_id', 'leave_manager_id']
+        return super().SELF_READABLE_FIELDS + ['x_bank_account_num', 'x_bank_name', 'employee_parent_id', 'coach_id', 'leave_manager_id']
 
     @property
     def SELF_WRITEABLE_FIELDS(self):
