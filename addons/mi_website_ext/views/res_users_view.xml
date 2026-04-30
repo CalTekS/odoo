@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_users_form_profile_readonly_fix" model="ir.ui.view">
+        <field name="name">res.users.preferences.readonly.fix</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="hr.res_users_view_form_profile"/> 
+        <field name="arch" type="xml">
+            
+            <xpath expr="//field[@name='employee_parent_id']" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='coach_id']" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='leave_manager_id']" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </xpath>
+
+        </field>
+    </record>
+</odoo>
