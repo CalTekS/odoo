@@ -606,9 +606,9 @@
 
 .timesheet-card {
     display: flex;
-    flex-direction: row; /* Cambiamos de column a row */
-    align-items: center; /* Centra la imagen verticalmente con el texto */
-    justify-content: space-between; /* Separa el texto de la imagen */
+    flex-direction: row; 
+    align-items: center; 
+    justify-content: space-between; 
     padding: 24px 16px;
     border-radius: 16px;
     border: 1px solid #ebeaea;
@@ -673,6 +673,7 @@
 }
 
 .phrase, .timesheet-body {
+.phrase, .timesheet-body {
   display: flex;
   padding: 0px 16px;
   flex-direction: column;
@@ -680,6 +681,17 @@
   gap: 8px;
   align-self: stretch;
 }
+
+.timesheet-body p {
+  color: #5b5959;
+    font-family: "Noto Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    align-self: stretch;
+    margin: 0;
+}
+
 
 .timesheet-body p {
   color: #5b5959;
@@ -1377,6 +1389,8 @@
   .welcome-card,
   .anniversary-card,
   .program-card,
+  .phrase-card,
+  .timesheet-card {
   .phrase-card,
   .timesheet-card {
     width: 100%;
