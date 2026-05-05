@@ -348,6 +348,28 @@
                             is the 2do column-->
                                     <div class="column2">
                                         <!--This
+                                is the new timesheet card-->
+                                        <div class="timesheet-card">
+                                            <div class="timesheet-content">
+                                                <t t-if="user.company_id.id == 1">
+                                                    <div class="timesheet-title-calengs">
+                                                        <h3>Registro diario obligatorio - Cal Loop</h3>
+                                                    </div>
+                                                </t>
+                                                <t t-elif="user.company_id.id == 2">
+                                                    <div class="timesheet-title-calteks">
+                                                        <h3>Registro diario obligatorio - Cal Loop</h3>
+                                                    </div>
+                                                </t>
+                                                <div class="timesheet-body">
+                                                    <p>!Recuerda registrar tu tiempo diariamente en el timesheet!</p>
+                                                </div>
+                                            </div>
+                                            <div class="timesheet-image">
+                                                <img src="/mi_website_ext/static/src/img/timesheet.jpg" alt="Timesheet Icon"/>
+                                            </div>
+                                        </div>
+                                        <!--This
                                 is the pha=rase card-->
                                         <t t-set="latest_phrase" t-value="request.env['website.publication'].sudo().search([
         ('publication_type', '=', 'phrase'),
