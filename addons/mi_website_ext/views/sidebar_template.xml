@@ -348,6 +348,23 @@
                             is the 2do column-->
                                     <div class="column2">
                                         <!--This
+                                is the new timesheet card-->
+                                        <div class="timesheet-card">
+                                            <t t-if="user.company_id.id == 1">
+                                                <div class="timesheet-title-calengs">
+                                                    <h3>Registro diario obligatorio - Cal Loop</h3>
+                                                </div>
+                                            </t>
+                                            <t t-elif="user.company_id.id == 2">
+                                                <div class="timesheet-title-calteks">
+                                                    <h3>Registro diario obligatorio - Cal Loop</h3>
+                                                </div>
+                                            </t>
+                                            <div class="timesheet-body">
+                                                <p>¡Recuerda registrar tu timesheet!</p>
+                                            </div>
+                                        </div>
+                                        <!--This
                                 is the pha=rase card-->
                                         <t t-set="latest_phrase" t-value="request.env['website.publication'].sudo().search([
         ('publication_type', '=', 'phrase'),
