@@ -673,7 +673,6 @@
 }
 
 .phrase, .timesheet-body {
-.phrase, .timesheet-body {
   display: flex;
   padding: 0px 16px;
   flex-direction: column;
@@ -1389,8 +1388,6 @@
   .welcome-card,
   .anniversary-card,
   .program-card,
-  .phrase-card,
-  .timesheet-card {
   .phrase-card,
   .timesheet-card {
     width: 100%;
