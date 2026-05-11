@@ -1,0 +1,23 @@
+.o_form_view.custom_publication_view.o_xxl_form_view .o_form_renderer.o_form_editable.d-flex {
+    flex-direction: column !important;
+    flex-wrap: wrap !important;
+}
+
+.o_form_view.custom_publication_view.o_xxl_form_view .o_form_sheet_bg {
+    max-width: 100% !important;
+    height: auto !important;
+    overflow: visible !important;
+}
+
+.o_form_view.custom_publication_view.o_xxl_form_view .o_form_sheet {
+    max-width: 98% !important;
+    width: 100% !important;
+    margin: 10px auto !important;
+}
+
+.o_form_view.custom_publication_view.o_xxl_form_view .oe_chatter {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 100% !important;
+    flex-basis: 100% !important;
+}

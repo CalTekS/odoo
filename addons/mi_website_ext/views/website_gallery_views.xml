@@ -4,7 +4,7 @@
             <field name="name">website.gallery.album.form</field>
             <field name="model">website.gallery.album</field>
             <field name="arch" type="xml">
-                <form string="Álbum de Galería">
+                <form string="Álbum de Galería" class="custom_publication_view">
                     <sheet>
                         <field name="image_1920" widget="image" class="oe_avatar" string="Imagen de Portada"/>
                         <div class="oe_title">

@@ -16,7 +16,8 @@
         'web.assets_backend': [
             ('after', 'hr_holidays/static/src/components/float_time_selection/float_time_selection_popover.js', 'mi_website_ext/static/src/js/time_format_widget_override.js'),
             'mi_website_ext/static/src/js/kiosk_mode.js',
-            'mi_website_ext/static/src/css/kiosk_mode.css'
+            'mi_website_ext/static/src/css/kiosk_mode.css',
+            'mi_website_ext/static/src/css/fix_xxl_form.css'
             
         ],
         "web.assets_frontend": [

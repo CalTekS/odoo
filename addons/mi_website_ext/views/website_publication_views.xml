@@ -17,7 +17,7 @@
             <field name="name">website.publication.form</field>
             <field name="model">website.publication</field>
             <field name="arch" type="xml">
-                <form string="Publicación">
+                <form string="Publicación" class="custom_publication_view">
                     <sheet>
                         <header>
                             <button name="open_view_wizard" type="object" string="Ver Lecturas" class="btn btn-primary"/>
