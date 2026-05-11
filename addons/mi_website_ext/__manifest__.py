@@ -21,6 +21,7 @@
         ],
         "web.assets_frontend": [
             "mi_website_ext/static/src/js/notify_button_handler.js",
+            "mi_website_ext/static/src/js/refrigerator_reminder.js",
             "mi_website_ext/static/src/js/check_private_info.js",
             'mi_website_ext/static/src/js/auto_logout.js',
             'mi_website_ext/static/src/js/manual_viewer.js',
@@ -94,6 +95,7 @@
         'views/userInfo.xml',
         'views/portal_private_info_modal.xml',
         'views/res_users_view.xml',
+        'views/refrigerator_reminder_template.xml',
     ],
     "installable": True,
     "application": True,

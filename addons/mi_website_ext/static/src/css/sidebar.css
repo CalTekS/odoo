@@ -887,7 +887,7 @@
 
 .custom-sidebar {
   width: 335px;
-  max-height: 1550px;
+  height: auto;
   background-color: #ffffff;
   padding: 16px;
   gap: 16px;
@@ -1209,7 +1209,7 @@
 }
 
 .announcements-panel {
-  max-height: 140px;
+  max-height: 500px;
   overflow-y: auto;
   background-color: #fff;
   padding: 10px;

@@ -57,3 +57,24 @@
   color: red;
 }
 
+#refrigerator_reminder_popup {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    display: block !important; 
+}
+
+#refrigerator_reminder_popup.show-popup {
+    opacity: 1;
+    visibility: visible;
+}
+
+#refrigerator_reminder_popup .modal-dialog {
+    transform: scale(0.8);
+    transition: transform 0.5s ease;
+}
+
+#refrigerator_reminder_popup.show-popup .modal-dialog {
+    transform: scale(1);
+}
+

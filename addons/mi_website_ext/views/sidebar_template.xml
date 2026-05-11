@@ -510,7 +510,7 @@
                 </t>
                                             </t>
                                         </t>
-                                        <t t-set="sorted_anniversary_list_final" t-value="sorted(anniversary_display_list_final, key=lambda x: x['hire_date_obj'].day)"/>
+                                        <t t-set="sorted_anniversary_list_final" t-value="sorted(anniversary_display_list_final, key=lambda x: (x['hire_date_obj'].year, x['employee_obj'].name))"/>
                                         <t t-if="sorted_anniversary_list_final">
                                             <div class="anniversary-card">
                                                 <div class="anniversary-title">
@@ -718,7 +718,7 @@
                                             <t t-set="recent_announcements" t-value="request.env['website.publication'].sudo().search([
         ('publication_type', '=', 'announce'),
         ('is_published', '=', True),
-    ], limit=10, order='publish_date desc')"/>
+    ], order='publish_date desc')"/>
                                             <t t-set="read_logs" t-value="request.env['publication.view.log'].sudo().search([
             ('user_id', '=', request.env.user.id),
             ('res_model', '=', 'website.publication'),
