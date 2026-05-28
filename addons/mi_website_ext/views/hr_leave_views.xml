@@ -21,7 +21,7 @@
             
             <xpath expr="//button[@name='action_refuse']" position="after">
                 <button string="Rechazar" name="action_refuse" type="object" icon="fa-times"
-                        invisible="state not in ('confirm', 'validate1') or uid not in [6, 326, 260, 291, 195, 190] or holiday_status_id != 6"/>
+                        invisible="state not in ('confirm', 'validate1') or uid not in [6, 326, 260, 291, 195, 190] or (holiday_status_id != 6 and uid != 6)"/>
             </xpath>
         </field>
     </record>
@@ -44,7 +44,13 @@
 
             <xpath expr="//button[@name='action_refuse']" position="attributes">
                 <attribute name="groups"/>
-                <attribute name="invisible">state not in ('confirm', 'validate', 'validate1') or uid not in [6, 326, 260, 291, 195, 190] or holiday_status_id != 6</attribute>
+                <attribute name="invisible">state not in ('confirm', 'validate', 'validate1') or uid not in [326, 260, 291, 195, 190] or (holiday_status_id != 6 and uid != 6)</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='name']/parent::group" position="after">
+                <group>
+                    <field name="x_leave_paid" widget="boolean_toggle" groups="hr_holidays.group_hr_holidays_manager"/>
+                </group>
             </xpath>
         </field>
     </record>

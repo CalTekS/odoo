@@ -173,6 +173,13 @@
                                     data-tooltip-text="Cumpliste dos años con nosotros. Si un día tu salud te juega una mala pasada, no te preocupes, ya cuentas con cobertura médica."
                                     data-tooltip-icon="/mi_website_ext/static/src/img/Medical.svg" />
                                     </div>
+                                     <div class="card-items2">
+                                        <img src="/mi_website_ext/static/src/img/Babbel.svg" alt="Grupo"
+                                    t-att-class="'tooltip-img' + ('' if user.x_days_in_company >= 730 else ' locked-benefit')"
+                                    data-tooltip-title="English Program"
+                                    data-tooltip-text="Ahora puedes solicitar una beca para estudiar inglés en la plataforma Babbel."
+                                    data-tooltip-icon="/mi_website_ext/static/src/img/Babbel.svg" />
+                                    </div>
                                 </div>
                             </div>
                             <div class="info-column">

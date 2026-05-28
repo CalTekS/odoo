@@ -7,6 +7,8 @@ _logger = logging.getLogger(__name__)
 class HrLeave(models.Model):
     _inherit = 'hr.leave'
 
+    x_leave_paid = fields.Boolean(string='Leave Paid')
+
     show_cancel_button = fields.Boolean(compute='_compute_show_cancel_button')
 
     @api.depends('state', 'employee_id')
