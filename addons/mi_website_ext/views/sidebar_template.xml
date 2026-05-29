@@ -177,7 +177,7 @@
                                         <img src="/mi_website_ext/static/src/img/Babbel.svg" alt="Grupo"
                                     t-att-class="'tooltip-img' + ('' if user.x_days_in_company >= 730 else ' locked-benefit')"
                                     data-tooltip-title="English Program"
-                                    data-tooltip-text="Desarrolla tus habilidades en inglés y amplía tus oportunidades de crecimiento profesional. Solicita tu participación en nuestro English Program."
+                                    data-tooltip-text="Desarrolla tus habilidades en inglés y amplía tus oportunidades de crecimiento profesional en nuestra empresa. Comunica a tu líder el interés de participar en nuestro English Program."
                                     data-tooltip-icon="/mi_website_ext/static/src/img/Babbel.svg" />
                                     </div>
                                 </div>
